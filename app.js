@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname,"/public")));
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/StayNest');
+  await mongoose.connect(process.env.MONGO_URL);
 }
 
 app.get("/",(req,res)=>{
